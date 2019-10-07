@@ -1,0 +1,171 @@
+﻿ 
+@using CONTANET.Helpers
+
+<ul class="m-menu__nav  m-menu__nav--dropdown-submenu-arrow ">
+    <li class="m-menu__item " aria-haspopup="true" is-active-route asp-controller="Home" asp-action="Index">
+        <a asp-controller="Home" asp-action="Index" asp-route-area="" class="m-menu__link ">
+            <i class="m-menu__link-icon la la-home"></i>
+            <span class="m-menu__link-text">
+                Inicio
+            </span>
+        </a>
+    </li>
+
+    @if (User.IsInRole(ConstantHelpers.ROLES.SUPERADMIN))
+    {
+        <li class="m-menu__item  m-menu__item--submenu" aria-haspopup="true" m-menu-submenu-toggle="hover" is-active-menu is-active-route asp-controller="Teacher" asp-area="Admin">
+            <a href="#" class="m-menu__link m-menu__toggle">
+                <i class="m-menu__link-icon flaticon-cogwheel-2"></i>
+                <span class="m-menu__link-text">
+                    Administración
+                </span>
+                <i class="m-menu__ver-arrow la la-angle-right"></i>
+            </a>
+            <div class="m-menu__submenu ">
+                <span class="m-menu__arrow"></span>
+                <ul class="m-menu__subnav">
+                    <li class="m-menu__item " aria-haspopup="true" is-active-route asp-controller="Teacher" asp-area="Admin" asp-action="Index">
+                        <a asp-action="Index" asp-controller="Teacher" asp-area="Admin" class="m-menu__link ">
+                            <i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i>
+                            <span class="m-menu__link-text">
+                                Docentes
+                            </span>
+                        </a>
+                    </li>
+                    <li class="m-menu__item " aria-haspopup="true" is-active-route asp-controller="Teacher" asp-area="Admin" asp-action="HiredTeacher">
+                        <a asp-action="HiredTeacher" asp-controller="Teacher" asp-area="Admin" class="m-menu__link ">
+                            <i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i>
+                            <span class="m-menu__link-text">
+                                Docentes contratados
+                            </span>
+                        </a>
+                    </li>
+
+                    <li class="m-menu__item " aria-haspopup="true" is-active-route asp-controller="AcademicSecretary" asp-area="Admin" asp-action="Index">
+                        <a asp-action="Index" asp-controller="AcademicSecretary" asp-area="Admin" class="m-menu__link ">
+                            <i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i>
+                            <span class="m-menu__link-text">
+                                Secretarios Académicos
+                            </span>
+                        </a>
+                    </li>
+                    <li class="m-menu__item " aria-haspopup="true" is-active-route asp-controller="Career" asp-area="Admin" asp-action="Index">
+                        <a asp-action="Index" asp-controller="Career" asp-area="Admin" class="m-menu__link ">
+                            <i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i>
+                            <span class="m-menu__link-text">
+                                Carreras
+                            </span>
+                        </a>
+                    </li>
+                    <li class="m-menu__item " aria-haspopup="true" is-active-route asp-controller="TeacherDedication" asp-area="Admin" asp-action="Index">
+                        <a asp-action="Index" asp-controller="TeacherDedication" asp-area="Admin" class="m-menu__link ">
+                            <i class="m-menu__link-bullet m-menu__link-bullet--dot"><span></span></i>
+                            <span class="m-menu__link-text">
+                                Horas por Dedicación
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        <li class="m-menu__item " aria-haspopup="true" is-active-route asp-controller="TeacherAssistance" asp-action="Index" asp-area="Admin">
+            <a asp-controller="TeacherAssistance" asp-action="Index" asp-route-area="Admin" class="m-menu__link ">
+                <i class="m-menu__link-icon flaticon-time-1"></i>
+                <span class="m-menu__link-text">
+                    Asistencia de Profesores
+                </span>
+            </a>
+        </li>
+        <li class="m-menu__item " aria-haspopup="true" is-active-route asp-controller="TeacherSchedule" asp-action="Index" asp-area="Admin">
+            <a asp-controller="TeacherSchedule" asp-action="Index" asp-route-area="Admin" class="m-menu__link ">
+                <i class="m-menu__link-icon flaticon-event-calendar-symbol"></i>
+                <span class="m-menu__link-text">
+                    Horario de Profesores
+                </span>
+            </a>
+        </li>
+        <li class="m-menu__item " aria-haspopup="true" is-active-route asp-area="Admin" asp-controller="SurveyManagement">
+            <a asp-route-area="Admin" asp-controller="SurveyManagement" asp-action="Index" class="m-menu__link ">
+                <i class="m-menu__link-icon flaticon-interface-6"></i>
+                <span class="m-menu__link-text">
+                    Gesti&oacute;n de Encuestas
+                </span>
+            </a>
+        </li>
+        <li class="m-menu__item " aria-haspopup="true" is-active-route asp-area="Admin" asp-controller="TeacherSection">
+            <a asp-route-area="Admin" asp-controller="TeacherSection" asp-action="Index" class="m-menu__link ">
+                <i class="m-menu__link-icon flaticon-interface-4"></i>
+                <span class="m-menu__link-text">
+                    Gesti&oacute;n de Secciones
+                </span>
+            </a>
+        </li>
+        <li class="m-menu__item " aria-haspopup="true" is-active-route asp-area="Admin" asp-controller="Course">
+            <a asp-route-area="Admin" asp-controller="Course" asp-action="Index" class="m-menu__link ">
+                <i class="m-menu__link-icon flaticon-interface-6"></i>
+                <span class="m-menu__link-text">
+                    Curso
+                </span>
+            </a>
+        </li>
+
+        <li class="m-menu__item " aria-haspopup="true" is-active-route asp-area="Admin" asp-controller="AcademicCharge">
+            <a asp-route-area="Admin" asp-controller="AcademicCharge" asp-action="Index" class="m-menu__link ">
+                <i class="m-menu__link-icon flaticon-tabs"></i>
+                <span class="m-menu__link-text">
+                    Carga Académica
+                </span>
+            </a>
+        </li>
+        <li class="m-menu__item " aria-haspopup="true" is-active-route asp-area="Admin" asp-controller="Activity">
+            <a asp-route-area="Admin" asp-controller="Activity" asp-action="Index" class="m-menu__link ">
+                <i class="m-menu__link-icon flaticon-tabs"></i>
+                <span class="m-menu__link-text">
+                    Actividades Lectivas
+                </span>
+            </a>
+        </li>
+
+        <li class="m-menu__item " aria-haspopup="true" is-active-route asp-area="Admin" asp-controller="NonActivity">
+            <a asp-route-area="Admin" asp-controller="NonActivity" asp-action="Index" class="m-menu__link ">
+                <i class="m-menu__link-icon flaticon-tabs"></i>
+                <span class="m-menu__link-text">
+                    Actividades No Lectivas
+                </span>
+            </a>
+        </li>
+
+        <li class="m-menu__item " aria-haspopup="true" is-active-route asp-area="Admin" asp-controller="TeacherCoordinator">
+            <a asp-route-area="Admin" asp-controller="TeacherCoordinator" asp-action="Index" class="m-menu__link ">
+                <i class="m-menu__link-icon flaticon-tabs"></i>
+                <span class="m-menu__link-text">
+                    Coordinador Docente
+                </span>
+            </a>
+        </li>
+
+        <li class="m-menu__item " aria-haspopup="true" is-active-route asp-area="Admin" asp-controller="Format">
+            <a asp-route-area="Admin" asp-controller="Format" asp-action="Index" class="m-menu__link ">
+                <i class="m-menu__link-icon flaticon-tabs"></i>
+                <span class="m-menu__link-text">
+                    Formatos
+                </span>
+            </a>
+        </li>
+    }
+
+
+    @if (User.IsInRole(ConstantHelpers.ROLES.BLOGER))
+    {
+      
+
+        <li class="m-menu__item " aria-haspopup="true" is-active-route asp-area="Admin" asp-controller="Format">
+            <a asp-route-area="Admin" asp-controller="Format" asp-action="Index" class="m-menu__link ">
+                <i class="m-menu__link-icon flaticon-tabs"></i>
+                <span class="m-menu__link-text">
+                    Blog
+                </span>
+            </a>
+        </li>
+    }
+</ul>

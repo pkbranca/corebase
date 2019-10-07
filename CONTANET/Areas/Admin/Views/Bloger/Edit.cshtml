@@ -1,0 +1,113 @@
+﻿@using CONTANET.Areas.Admin.Models.BlogerViewModels
+
+@model EditBlogerViewModel
+@{
+    ViewBag.Title = "Editar Bloger";
+    ViewBag.ErrorMessage = "¡Ups! Parece que hubo un error con los datos ingresados. Revíselo e intente otra vez.";
+    ViewBag.Breadcrumbs = new[] {
+new BreadcrumbViewData { Name = "Gestión de Blogers", Area = "Admin", Controller = "Bloger", Action = "Index"},
+new BreadcrumbViewData { Name = ViewBag.Title, Controller = null, Action = null }
+};
+    ViewBag.BackUrl = Url.Action("Index", "Teacher");
+}
+
+<div class="m-content">
+    <div class="m-portlet">
+        <div class="col-md-12">
+            <ul class="nav nav-tabs steps">
+                <li class="nav-item">
+                    <a href="#tab1" data-toggle="tab" class="nav-link active step">
+                        <span class="desc">
+                            Datos Personales
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#tab2" data-toggle="tab" class="nav-link step">
+                        <span class="desc" style="text-align: center">
+                            Datos Laborales
+                        </span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#tab3" data-toggle="tab" class="nav-link step">
+                        <span class="desc" style="text-align: center">
+                            Instrucci&oacute;n
+                        </span>
+                    </a>
+                </li>
+                @*<li class="nav-item">
+                        <a href="#tab4" data-toggle="tab" class="nav-link step">
+                            <span class="desc">
+                                Experiencia
+                            </span>
+                        </a>
+                    </li>*@
+            </ul>
+        </div>
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab1" style="">
+                <div class="m-portlet--tab">
+                    <form class="m-form m-form--state m-form--fit" id="edit-form" asp-action="Edit" asp-controller="Teacher" data-ajax="true" data-ajax-method="POST" data-ajax-begin="Form.begin" data-ajax-complete="Form.complete" data-ajax-success="Form.success" data-ajax-failure="Form.failure">
+                        <div class="m-portlet__body">
+                            <div class="m-form__content">
+                                <div class="m-alert m-alert--icon alert alert-danger m--hide" role="alert" id="m-form_alert">
+                                    <div class="m-alert__icon">
+                                        <i class="la la-warning"></i>
+                                    </div>
+                                    <div id="alert-text" class="m-alert__text">
+                                        @ViewBag.ErrorMessage
+                                    </div>
+                                    <div class="m-alert__close">
+                                        <button type="button" class="close" data-close="alert" aria-label="Close"></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <input hidden asp-for="Id" />
+                            @await Html.PartialForAsync(m => m.Fields, "_EditBlogerEntryForm", nameof(Model.Fields))
+                        </div>
+                        @*<div class="m-portlet__foot m-portlet__foot--fit m--align-right m--margin-top-10">
+                                <div class="m-form__actions">
+                                    <button id="btnSave" class="btn btn-primary m-btn m-btn--custom m-btn--icon" type="submit">
+                                        <span>
+                                            <i class="la la-save"></i>
+                                            &nbsp;&nbsp;
+                                            <span>
+                                                Guardar
+                                            </span>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>*@
+                    </form>
+                </div>
+            </div>
+            <div class="tab-pane" id="tab2" style="">
+                <div class="m-portlet--tab">
+                    <form class="m-form m-form--state m-form--fit" id="laboral-form" asp-action="LaborEdit" asp-controller="Teacher" data-ajax="true" data-ajax-method="POST" data-ajax-begin="Form.begin" data-ajax-complete="Form.complete" data-ajax-success="Form.success" data-ajax-failure="Form.failure">
+                        <input hidden name="Id" />
+                       
+                    </form>
+                </div>
+            </div>
+            <div class="tab-pane" id="tab3" style="">
+                <div class="m-portlet--tab">
+                    <form class="m-form m-form--state m-form--fit" id="instruction-form" asp-action="Instruction" asp-controller="Teacher" data-ajax="true" data-ajax-method="POST" data-ajax-begin="Form.begin" data-ajax-complete="Form.complete" data-ajax-success="Form.success" data-ajax-failure="Form.failure">
+                        <input hidden name="Id" />
+                      
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/jquery-ajax-unobtrusive.min.js"></script>
+    <script src="~/js/areas/admin/bloger/edit.js"></script>
+}
+
+@section Styles{
+    <link type="text/css" rel="stylesheet" href="~/css/areas/admin/teacher/edit.css" />
+    <link type="text/css" rel="stylesheet" href="~/css/areas/admin/teacher/teacherInstruction/teacherinstruction.css" />
+}

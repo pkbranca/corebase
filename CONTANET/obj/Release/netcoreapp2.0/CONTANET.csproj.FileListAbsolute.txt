@@ -1,0 +1,15 @@
+C:\Users\Optimus\source\repos\CONET\CONTANET\bin\Release\netcoreapp2.0\CONTANET.deps.json
+C:\Users\Optimus\source\repos\CONET\CONTANET\bin\Release\netcoreapp2.0\CONTANET.runtimeconfig.json
+C:\Users\Optimus\source\repos\CONET\CONTANET\bin\Release\netcoreapp2.0\CONTANET.runtimeconfig.dev.json
+C:\Users\Optimus\source\repos\CONET\CONTANET\bin\Release\netcoreapp2.0\CONTANET.dll
+C:\Users\Optimus\source\repos\CONET\CONTANET\bin\Release\netcoreapp2.0\CONTANET.pdb
+C:\Users\Optimus\source\repos\CONET\CONTANET\bin\Release\netcoreapp2.0\DAL.dll
+C:\Users\Optimus\source\repos\CONET\CONTANET\bin\Release\netcoreapp2.0\DAL.pdb
+C:\Users\Optimus\source\repos\CONET\CONTANET\obj\Release\netcoreapp2.0\CONTANET.csprojAssemblyReference.cache
+C:\Users\Optimus\source\repos\CONET\CONTANET\obj\Release\netcoreapp2.0\CONTANET.csproj.CoreCompileInputs.cache
+C:\Users\Optimus\source\repos\CONET\CONTANET\obj\Release\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+C:\Users\Optimus\source\repos\CONET\CONTANET\obj\Release\netcoreapp2.0\CONTANET.AssemblyInfoInputs.cache
+C:\Users\Optimus\source\repos\CONET\CONTANET\obj\Release\netcoreapp2.0\CONTANET.AssemblyInfo.cs
+C:\Users\Optimus\source\repos\CONET\CONTANET\obj\Release\netcoreapp2.0\CONTANET.csproj.CopyComplete
+C:\Users\Optimus\source\repos\CONET\CONTANET\obj\Release\netcoreapp2.0\CONTANET.dll
+C:\Users\Optimus\source\repos\CONET\CONTANET\obj\Release\netcoreapp2.0\CONTANET.pdb

@@ -1,0 +1,87 @@
+﻿@{
+    var institutionName = "Lusho";
+    var projectName = "Veliz";
+}
+
+<!DOCTYPE html>
+<html>
+<!-- begin::Head -->
+<head>
+    <meta charset="utf-8" />
+    <title>@institutionName | @projectName</title>
+    <meta name="description" content="@institutionName - @projectName">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!--begin::Web font -->
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+    <script>
+        WebFont.load({
+            google: { "families": ["Poppins:300,400,500,600,700", "Roboto:300,400,500,600,700"] },
+            active: function () {
+                sessionStorage.fonts = true;
+            }
+        });
+    </script>
+    <!--end::Web font -->
+    <!--begin::Base Styles -->
+    <environment include="Development">
+        <link href="~/assets/css/vendors.bundle.css" rel="stylesheet" type="text/css" />
+        <link href="~/assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+        <link href="~/css/custom.css" rel="stylesheet" type="text/css" />
+    </environment>
+    <environment exclude="Development">
+        <link href="~/css/bundle.min.css" rel="stylesheet" type="text/css" />
+    </environment>
+    <link href="~/css/login.css" rel="stylesheet" />
+    <link href="~/css/themes/akdemix/login.css" rel="stylesheet" />
+    @RenderSection("Styles", required: false)
+    <!--end::Base Styles -->
+</head>
+<!-- end::Head -->
+<!-- end::Body -->
+<body class="m--skin- m-page--loading-enabled m-page--loading m-header--fixed m-header--fixed-mobile m-aside-left--enabled m-aside-left--skin-dark m-aside-left--offcanvas m-footer--push m-aside--offcanvas-default">
+    <!-- begin::Page loader -->
+    <div class="m-page-loader m-page-loader--base">
+        <div class="m-spinner m-spinner--brand"></div>
+    </div>
+    <!-- end::Page Loader -->
+    <!-- begin:: Page -->
+    <section class="wrapper">
+        <div class="intro">
+            <div class="left-ovh">
+                <div class="left-side">
+                    @RenderBody()
+                    <div style="width:145px;left:25px;bottom:25px;position: fixed;">
+                         
+                    </div>
+                </div> 
+            </div> 
+        </div>
+    </section>
+
+    <!-- end:: Page -->
+    <!--begin::Base Scripts -->
+    <environment include="Development">
+        <script src="~/assets/js/vendors.bundle.js" type="text/javascript"></script>
+        <script src="~/assets/js/scripts.bundle.js" type="text/javascript"></script>
+        <script src="~/js/custom.js" type="text/javascript"></script>
+    </environment>
+    <environment exclude="Development">
+        <script src="~/js/bundle.min.js" type="text/javascript"></script>
+    </environment>
+    <script src="~/assets/js/login.js"></script>
+    <script>
+        _app.constants.url.root = '@Url.Content("~")';
+    </script>
+    <!--end::Base Scripts -->
+    <!--begin::Page Snippets -->
+    @RenderSection("Scripts", required: false)
+    <!--end::Page Snippets -->
+    <!-- begin::Page Loader -->
+    <script>
+        $(window).on('load', function () { $('body').removeClass('m-page--loading'); });
+    </script>
+    <!-- end::Page Loader -->
+</body>
+<!-- end::Body -->
+</html>
